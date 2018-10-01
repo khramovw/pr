@@ -1,0 +1,156 @@
+/* defolt classes */
+
+.container {
+  width: $containerwidth;
+  padding: $containerpadding;
+  box-sizing: border-box;
+}
+header {
+  height: $headerheigth;
+  display: flex;
+  align-items: center;
+}
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  width: 14.75em;
+  img {
+    width: 100%;
+  }
+}
+.btn {
+  border: 1px solid transparent;
+  border-radius: 18px;
+  width: 13em;
+  flex-direction: row;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  color: rgba(255,255,255,.5);
+  padding: .5em 1em;
+  transition: all .25s;
+  cursor: pointer;
+  &:hover {
+    color: rgba(255,255,255,1);
+  }
+}
+.btn-opacity {
+  border: 1px solid $accentColor;
+  color: white;
+  position: relative;
+  p {
+    transform: translateX(-1em);
+  }
+
+  &:hover, &.active-item {
+    background-color: $activesColor;
+    transition: all .25s;
+  }
+
+  i {
+    position: absolute;
+    right: .5em;
+  }
+}
+.nav-wraper {
+  display: inherit;
+  flex-direction: inherit;
+  button + button {
+    margin-left: 5em;
+  }
+}
+.menu-btn {
+  width: 7em;
+  border: transparent;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  text-transform: uppercase;
+  color: white;
+  align-items: center;
+  font-size: 1em;
+
+
+  &:hover {
+
+    .menu-ico {
+      position: relative;
+      span {
+        transition: all .5s;
+        position: absolute;
+        &:first-child {
+          transform: rotate(45deg);
+        }
+        &:nth-child(2) {
+          transform: rotate(-45deg);
+        }
+        &:last-child {
+          width: 0;
+          opacity: 0;
+        }
+      }
+
+    }
+  }
+}
+.menu-ico {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-evenly;
+  height: 2em;
+
+  span {
+    display: inline-block;
+    background-color: #fff;
+    height: 1px;
+    transition: all .5s;
+  }
+  span:not(:last-child) {
+    width: 1.8125em;
+  }
+  span:last-child {
+    width: 1.4375em;
+  }
+
+}
+.social-buttons {
+  position: absolute;
+  transform: translateY(-50%) translateX(3em);
+  top: 50%;
+  ul {
+    li {
+      margin: 1em 0;
+      a {
+        writing-mode: tb-rl;
+        transform:rotate(180deg);
+        font-size: 1em;
+        color: rgba(255,255,255,.5);
+        transition: all .5s;
+
+        &:hover {
+          color: $activesColor;
+          transition: all .5s;
+        }
+      }
+    }
+  }
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  .container {
+    padding-top: 0;
+    padding-right: 1em;
+    padding-bottom: 1em;
+    padding-left: 2em;
+  }
+}

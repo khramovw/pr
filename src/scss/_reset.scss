@@ -1,0 +1,72 @@
+@import "customvaribles";
+
+/* reset */
+*{
+  &:focus {
+    outline: none !important;
+  }
+  ::-moz-input-placeholder{
+    transition: opacity 0.35s ease-in-out;
+    opacity: 1;
+  }
+  ::-webkit-input-placeholder{
+    transition: opacity 0.35s ease-in-out;
+    opacity: 1;
+  }
+  ::-ms-input-placeholder{
+    transition: opacity 0.35s ease-in-out;
+    opacity: 1;
+  }
+  // hover
+  :hover::-moz-input-placeholder{
+    opacity: .7;
+  }
+  :hover::-webkit-input-placeholder{
+    opacity: .7;
+  }
+  :hover::-ms-input-placeholder{
+    opacity: .7;
+  }
+  // focus
+  :focus::-moz-input-placeholder{
+    opacity: 0;
+  }
+  :focus::-webkit-input-placeholder{
+    opacity: 0;
+  }
+  :focus::-ms-input-placeholder{
+    opacity: 0;
+  }
+}
+
+body{
+  font-family: $generalFont;
+  font-size: calc( 100vw / 1920 * 16 );
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  box-sizing: border-box;
+  background: url("../img/bg.jpg") $bodyBgColor no-repeat top center / cover;
+}
+
+h1, h2, h3, h4, h5, h6, p{
+  margin: 0;
+}
+.h1 {
+  font-size: 3.75em;
+}
+ul, ol{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+button {
+  background-color: transparent;
+  -webkit-appearance: none;
+  cursor: pointer;
+}
+a {
+  text-decoration: none;
+}
