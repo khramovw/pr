@@ -7,25 +7,26 @@
   }
   ::-moz-input-placeholder{
     transition: opacity 0.35s ease-in-out;
-    opacity: 1;
+    opacity: .7;
   }
   ::-webkit-input-placeholder{
     transition: opacity 0.35s ease-in-out;
-    opacity: 1;
+    opacity: .7;
+    text-align: center;
   }
   ::-ms-input-placeholder{
     transition: opacity 0.35s ease-in-out;
-    opacity: 1;
+    opacity: .7;
   }
   // hover
   :hover::-moz-input-placeholder{
-    opacity: .7;
+    opacity: 1;
   }
   :hover::-webkit-input-placeholder{
-    opacity: .7;
+    opacity: 1;
   }
   :hover::-ms-input-placeholder{
-    opacity: .7;
+    opacity: 1;
   }
   // focus
   :focus::-moz-input-placeholder{
@@ -54,8 +55,14 @@ body{
 h1, h2, h3, h4, h5, h6, p{
   margin: 0;
 }
+.h1, .h2 {
+  color: white;
+}
 .h1 {
   font-size: 3.75em;
+}
+.h2 {
+  font-size: 1.375em;
 }
 ul, ol{
   margin: 0;

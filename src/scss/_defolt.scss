@@ -5,15 +5,16 @@
   padding: $containerpadding;
   box-sizing: border-box;
 }
-header {
-  height: $headerheigth;
-  display: flex;
-  align-items: center;
-}
 .row {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
+}
+
+header {
+  height: $headerheigth;
+  display: flex;
   align-items: center;
 }
 .logo {
@@ -22,10 +23,19 @@ header {
     width: 100%;
   }
 }
+
+.content {
+  visibility: hidden;
+  opacity: 0;
+  &.is-active {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
 .btn {
   border: 1px solid transparent;
-  border-radius: 18px;
-  width: 13em;
+  border-radius: 24px;
   flex-direction: row;
   display: flex;
   align-items: center;
@@ -39,6 +49,7 @@ header {
   }
 }
 .btn-opacity {
+  width: 13em;
   border: 1px solid $accentColor;
   color: white;
   position: relative;
@@ -55,6 +66,12 @@ header {
     position: absolute;
     right: .5em;
   }
+}
+.btn-simple {
+  border-color: white;
+  padding: 1em 2em;
+  width: fit-content;
+  text-transform: uppercase;
 }
 .nav-wraper {
   display: inherit;
@@ -74,8 +91,19 @@ header {
   align-items: center;
   font-size: 1em;
 
-
   &:hover {
+    .menu-ico {
+      span {
+        &:last-child {
+          background-color: $activesColor;
+          //transition: all .5s;
+        }
+      }
+    }
+
+  }
+
+  &.open-menu{
 
     .menu-ico {
       position: relative;
@@ -139,6 +167,69 @@ header {
       }
     }
   }
+}
+
+.main-menu {
+  position: absolute;
+  right: 16em;
+  top: -100%;
+  transition: all .5s;
+
+  &.open-menu {
+    top: 8.2em;
+    transition: all .5s;
+  }
+
+  ul {
+    text-align: right;
+
+    li {
+      &.large-item {
+        a {
+          color: white;
+          font-size: 3.75em;
+          font-weight: $bold;
+        }
+      }
+      &.small-item {
+        a {
+          color: rgba(255,255,255,.7);
+          font-size: 1.875em;
+        }
+      }
+      a {
+        transition: all .5s;
+      }
+      &:hover, &.active-item {
+        a {
+          color: $activesColor;
+          transition: all .5s;
+        }
+      }
+    }
+  }
+}
+
+.content {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  transition: all .5s;
+
+  &.open-menu {
+    left: -100%;
+    transition: all .5s;
+    opacity: 0;
+  }
+}
+
+.title {
+  color: white;
+  margin-bottom: 2.375em;
+}
+.subtitle {
+  color: rgba(255,255,255,.6);
 }
 
 footer {
