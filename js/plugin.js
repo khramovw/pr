@@ -5,7 +5,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 /* js */
-// history.pushState({}, 'home', 'home');
+
 function htmlcolToObj(arr) {
     return [].slice.call(arr);
 }
@@ -79,7 +79,8 @@ var PageNavigate = function () {
         this.canGo = true;
         this.currentPageNum = 1;
         this.currentPage;
-        this.newpagenum;
+        this.nextPage;
+        this.nextpagenum;
         this.navtopage;
 
         this.scrollEvent();
@@ -127,7 +128,13 @@ var PageNavigate = function () {
                 if (_this4.newpagenum > _this4.maxpage) _this4.newpagenum = 1;
                 if (_this4.newpagenum < 1) _this4.newpagenum = _this4.maxpage;
 
-                PubSub.publish('gotopage', { from: _this4.currentPageNum, to: _this4.newpagenum, pages: _this4.pages });
+                PubSub.publish('gotopage', {
+                    from: _this4.currentPageNum,
+                    to: _this4.newpagenum,
+                    pages: _this4.pages,
+                    currentPage: _this4.currentPage,
+                    nextPage: _this4.nextPage
+                });
 
                 // set number of current page
                 _this4.currentPageNum = _this4.newpagenum;
@@ -146,18 +153,36 @@ var PageNavigate = function () {
     }, {
         key: 'navigating',
         value: function navigating() {
+
+            // Gsap
+            var tl = new TimelineMax();
+            console.log('tl', tl);
+
             this.navtopage = PubSub.subscribe('gotopage', function (msg, data) {
                 // console.log(msg, data);
+                var currentPage = void 0,
+                    nextPage = void 0;
 
                 //  Changes page
-                data.pages.filter(function (page) {
+                data.pages.filter(function (page, i) {
                     page.dataset.page == data.to ? page.classList.add('is-active', 'open-menu-js') : page.classList.remove('is-active', 'open-menu-js');
+                    page.dataset.page == data.to ? nextPage = page : true;
+                    page.dataset.page == data.from ? currentPage = page : true;
+                    console.log('i: ', i, 'currentPage: ', currentPage, 'nextPage: ', nextPage);
                 });
+
+                if (data.to > data.from) {
+                    tl.fromTo(currentPage, 0.5, { x: '-50%', opacity: '1' }, { x: '-200%' }).to(currentPage, 0.1, { opacity: '0' }).fromTo(nextPage, 0.5, { x: '100%', opacity: '0' }, { x: '-50%', opacity: '1' });
+                }
+                if (data.to < data.from) {
+                    tl.fromTo(currentPage, 0.5, { x: '-50%', opacity: '1' }, { x: '200%' }).to(currentPage, 0.1, { opacity: '0' }).fromTo(nextPage, 0.5, { x: '-200%', opacity: '0' }, { x: '-50%', opacity: '1' });
+                }
 
                 // Changes Url
                 data.pages.find(function (page) {
-                    return page.dataset.page == data.to ? history.pushState({}, page.dataset.pagename, page.dataset.pagename) : false;
+                    return page.dataset.page == data.to ? window.location.hash = page.dataset.pagename : false;
                 });
+                // data.pages.find( page => page.dataset.page == data.to ? history.pushState({}, page.dataset.pagename, page.dataset.pagename) : false );
             });
         }
     }]);
