@@ -18,41 +18,53 @@ var MainNav = function () {
         this.menulistitem = document.querySelector('.menu-items-js');
         this.navitems = htmlcolToObj(document.querySelectorAll('.menu-items-js ul li'));
         // this.content = document.querySelector('.open-menu-js');
-        this.pubsub = PubSub.subscribe('one', function (msg, data) {
-            console.log(msg, data);
-        });
     }
 
     _createClass(MainNav, [{
         key: 'init',
         value: function init() {
-            this.toggleOpenMenu();
             this.setactive();
+            this.eventIs();
         }
     }, {
-        key: 'toggleOpenMenu',
-        value: function toggleOpenMenu() {
+        key: 'eventIs',
+        value: function eventIs() {
             var _this = this;
 
             this.menubtn.addEventListener('click', function (e) {
                 e.preventDefault();
-                _this.content = document.querySelector('.open-menu-js');
-                _this.menubtn.classList.toggle('open-menu');
-                _this.menulistitem.classList.toggle('open-menu');
-                _this.content.classList.toggle('open-menu');
+                _this.toggleOpenMenu();
             });
+        }
+    }, {
+        key: 'toggleOpenMenu',
+        value: function toggleOpenMenu() {
+            // this.menubtn.addEventListener('click', e => {
+            //     e.preventDefault();
+            //     // this.content = document.querySelector('.open-menu-js');
+            //     // this.menubtn.classList.toggle('open-menu');
+            //     // this.menulistitem.classList.toggle('open-menu');
+            //     // this.content.classList.toggle('open-menu');
+            //     // TweenMax.staggerFrom('.menu-items-js ul li a', .1, { opacity: 0, scale: .5, y: -80, ease:Back.easeOut.config(3) }, .2);
+            //     // PubSub.publish('openmenu', { items: this.navitems });
+            // });
+            this.content = document.querySelector('.open-menu-js');
+            this.menubtn.classList.toggle('open-menu');
+            this.menulistitem.classList.toggle('open-menu');
+            this.content.classList.toggle('open-menu');
         }
     }, {
         key: 'setactive',
         value: function setactive() {
             var _this2 = this;
 
+            // Gsap
+            var tl = new TimelineMax();
             this.navitems.some(function (el) {
                 el.addEventListener('click', function (link) {
                     _this2.resetactive();
                     link.target.parentElement.classList.add('active-item');
-                    PubSub.publish('one', '--');
-                    console.log('msg-publish');
+                    _this2.toggleOpenMenu();
                 });
             });
         }
@@ -62,9 +74,6 @@ var MainNav = function () {
             this.navitems.filter(function (el) {
                 return el.classList.remove('active-item');
             });
-            this.pubsub;
-
-            console.log('msg');
         }
     }]);
 
@@ -156,7 +165,6 @@ var PageNavigate = function () {
 
             // Gsap
             var tl = new TimelineMax();
-            console.log('tl', tl);
 
             this.navtopage = PubSub.subscribe('gotopage', function (msg, data) {
                 // console.log(msg, data);
