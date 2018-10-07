@@ -813,7 +813,7 @@ footer {
 
 /* contact end*/
 .parley {
-  visibility: hidden; }
+  opacity: 0; }
   .parley .title {
     margin: 5em 0; }
 
@@ -853,7 +853,7 @@ footer {
   text-align: center; }
 
 .pageofthanks {
-  visibility: hidden; }
+  opacity: 0; }
   .pageofthanks .title {
     margin-top: 5em; }
   .pageofthanks .btn-opacity.active-btn {
@@ -924,7 +924,7 @@ ul.points {
       bottom: 4em; }
     ul.points li .points-description {
       position: absolute;
-      width: 20em; }
+      width: 21em; }
     ul.points li .point-title {
       font-size: 3em;
       font-family: 'Gotham Pro';
@@ -933,7 +933,9 @@ ul.points {
     ul.points li .point-subtitle {
       font-size: 1.0625em;
       color: white;
-      margin-top: 1em; }
+      margin-top: 1em;
+      font-family: "Segoe UI";
+      text-transform: uppercase; }
     ul.points li .point {
       position: absolute;
       width: 1.3em;
