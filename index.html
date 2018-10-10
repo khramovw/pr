@@ -56,14 +56,14 @@
         <!--main menu start-->
         <nav class="main-menu menu-items-js">
             <ul>
-                <li class="large-item"><a href="#">Услуги</a></li>
-                <li class="large-item"><a href="#">Портфолио</a></li>
-                <li class="large-item"><a href="#">Контакты</a></li>
-                <li class="small-item active-item"><a href="#">Личный кабинет</a></li>
-                <li class="small-item"><a href="#">Юр.информация</a></li>
-                <li class="small-item"><a href="#">Результат</a></li>
-                <li class="small-item"><a href="#">Вакансии</a></li>
-                <li class="small-item"><a href="#">Брифы</a></li>
+                <li class="large-item"><a data-target="2" href="#">Услуги</a></li>
+                <li class="large-item"><a data-target="5" href="#">Портфолио</a></li>
+                <li class="large-item"><a data-target="3" href="#">Контакты</a></li>
+                <li class="small-item disabled-item"><a href="#">Личный кабинет</a></li>
+                <li class="small-item disabled-item"><a href="#">Юр.информация</a></li>
+                <li class="small-item"><a data-target="4" href="#">Результат</a></li>
+                <li class="small-item disabled-item"><a href="#">Вакансии</a></li>
+                <li class="small-item disabled-item"><a href="#">Брифы</a></li>
             </ul>
         </nav>
         <!--main menu end-->
@@ -71,10 +71,10 @@
         <!--buttons social network start-->
         <nav class="social-buttons">
             <ul>
-                <li><a href="#">dribbble</a></li>
-                <li><a href="#">behance</a></li>
-                <li><a href="#">facebook</a></li>
-                <li><a href="#">instagram</a></li>
+                <li><a href="https://vk.com/top_rated_agency" target="_blank">vk</a></li>
+                <li><a href="#" target="_blank">behance</a></li>
+                <li><a href="#" target="_blank">facebook</a></li>
+                <li><a href="#" target="_blank">instagram</a></li>
             </ul>
         </nav>
         <!--buttons social network end-->
@@ -536,12 +536,108 @@
         </section>
         <!--main content end-->
 
-
         <!--main content start-->
         <section data-page="5" data-pagename="portfolio" class="portfolio content">
             <div class="title">
                 <h1 class="h1">Порфолио</h1>
             </div>
+
+            <!--slider start-->
+            <div class="slider-works">
+
+                <div class="slides-wrapper">
+
+                    <nav class="slides-line">
+                        <ul>
+                            <li class="previus-slide">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="logo">
+                                            <a href="/">
+                                                <img src="img/logo.png" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="card-title">
+                                            <h2 class="h2">Ребрендинг и редизайн сайта нашей компании</h2>
+                                        </div>
+                                        <div class="card-descriptions">
+                                            <div class="card-date">27 Октября 2018</div>
+                                            <div class="card-tags">Branding, UI/UX Design, Web Development</div>
+                                        </div>
+                                    </div>
+                                    <div class="card-img-wrapper">
+                                        <img src="img/sl.png" alt="">
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="current-slide">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="logo">
+                                            <a href="/">
+                                                <img src="img/logo.png" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="card-title">
+                                            <h2 class="h2">Ребрендинг и редизайн сайта нашей компании</h2>
+                                        </div>
+                                        <div class="card-descriptions">
+                                            <div class="card-date">27 Октября 2018</div>
+                                            <div class="card-tags">Branding, UI/UX Design, Web Development</div>
+                                        </div>
+                                    </div>
+                                    <div class="card-img-wrapper">
+                                        <img src="img/sl.png" alt="">
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="next-slide">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="logo">
+                                            <a href="/">
+                                                <img src="img/logo.png" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="card-title">
+                                            <h2 class="h2">Ребрендинг и редизайн сайта нашей компании</h2>
+                                        </div>
+                                        <div class="card-descriptions">
+                                            <div class="card-date">27 Октября 2018</div>
+                                            <div class="card-tags">Branding, UI/UX Design, Web Development</div>
+                                        </div>
+                                    </div>
+                                    <div class="card-img-wrapper">
+                                        <img src="img/sl.png" alt="">
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </nav>
+
+                </div>
+
+                <div class="progressbar">
+
+                    <div class="left arrow">
+                        <button class="btn-slide">
+                            <i class="material-icons">arrow_back_ios</i>
+                        </button>
+                    </div>
+
+                    <div class="counter">4/26</div>
+
+                    <div class="right arrow">
+                        <button class="btn-slide">
+                            <i class="material-icons">arrow_forward_ios</i>
+                        </button>
+                    </div>
+
+                </div>
+
+            </div>
+            <!--slider end-->
+
         </section>
         <!--main content end-->
 
