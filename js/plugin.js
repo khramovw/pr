@@ -10,56 +10,18 @@ function htmlcolToObj(arr) {
     return [].slice.call(arr);
 }
 
-// class MainNav {
-//     constructor () {
-//         this.menubtn = document.querySelector('.menu-js');
-//         this.menulistitem = document.querySelector('.menu-items-js');
-//         this.navitems = htmlcolToObj(document.querySelectorAll('.menu-items-js ul li'));
-//         // this.content = document.querySelector('.open-menu-js');
-//     }
-//     init () {
-//         this.setactive();
-//         this.eventIs ();
-//     }
-//     eventIs () {
-//         this.menubtn.addEventListener('click', e => {
-//             e.preventDefault();
-//             this.toggleOpenMenu();
-//         });
-//     }
-//     toggleOpenMenu () {
-//         // TweenMax.staggerFrom('.menu-items-js ul li a', .1, { opacity: 0, scale: .5, y: -80, ease:Back.easeOut.config(3) }, .2);
-//         // PubSub.publish('openmenu', { items: this.navitems });
-//         this.content = document.querySelector('.open-menu-js');
-//         this.menubtn.classList.toggle('open-menu');
-//         this.menulistitem.classList.toggle('open-menu');
-//         this.content.classList.toggle('open-menu');
-//     }
-//     setactive () {
-//         // Gsap
-//         let tl = new TimelineMax();
-//         this.navitems.some( el => {
-//             el.addEventListener('click', link => {
-//                 this.resetactive();
-//                 link.target.parentElement.classList.add('active-item');
-//                 this.toggleOpenMenu();
-//             })
-//         });
-//     }
-//     resetactive () {
-//         this.navitems.filter( el => el.classList.remove('active-item'));
-//     }
-//
-// }
-
 var PageNavigate = function () {
     function PageNavigate() {
         _classCallCheck(this, PageNavigate);
 
         this.self = this;
 
+        // Button menu
         this.menubtn = document.querySelector('.menu-js');
+
+        // Main menu
         this.menulistitem = document.querySelector('.menu-items-js');
+        // Items of main menu
         this.navitems = htmlcolToObj(document.querySelectorAll('.menu-items-js ul li'));
 
         this.pages = [];
@@ -69,6 +31,21 @@ var PageNavigate = function () {
         this.nextPage;
         this.nextPageNum;
         this.navtopage;
+
+        // Plagin of calculator
+        this.controlItem = htmlcolToObj(document.querySelectorAll('.control-item'));
+        this.controlBtn = htmlcolToObj(document.querySelectorAll('.check-percent'));
+        this.controlBtn;
+        this.diagramBtn;
+        this.navcalc;
+        this.controlItem;
+        this.openControl = 1;
+        this.checkBox = 5;
+        this.getPercent();
+        this.clickCheck();
+
+        this.calculatorPlugin();
+        this.navCalculator();
 
         this.scrollEvent();
         this.clickEvent();
@@ -214,6 +191,9 @@ var PageNavigate = function () {
         value: function clickEvent() {}
     }, {
         key: 'pagenavigating',
+
+
+        // main navigation os pages
         value: function pagenavigating() {
 
             // Gsap
@@ -232,7 +212,7 @@ var PageNavigate = function () {
                     // console.log('i: ', i, 'currentPage: ', currentPage, 'nextPage: ', nextPage);
                     // this.currentPage = currentPage;
                     // this.nextPage = nextPage;
-                    // console.log(this.currentPage, this.nextPage);
+                    // console.log('***', this.currentPage, this.nextPage);
 
                 });
 
@@ -250,12 +230,135 @@ var PageNavigate = function () {
                 // data.pages.find( page => page.dataset.page == data.to ? history.pushState({}, page.dataset.pagename, page.dataset.pagename) : false );
             });
         }
+    }, {
+        key: 'calculatorPlugin',
+        value: function calculatorPlugin() {
+            var _this5 = this;
+
+            this.controlItem = htmlcolToObj(document.querySelectorAll('.control-item'));
+            this.controlBtn = htmlcolToObj(document.querySelectorAll('.control-btn'));
+            this.diagramBtn = htmlcolToObj(document.querySelectorAll('.diagram-btn'));
+
+            this.controlBtn.filter(function (btn) {
+
+                console.log('BTN', btn.dataset.btn);
+
+                btn.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    _this5.closeCalcItem();
+
+                    PubSub.publish('calcClick', {
+                        button: btn,
+                        items: _this5.controlItem,
+                        diagram: _this5.diagramBtn,
+                        to: btn.dataset.btn,
+                        from: _this5.openControl
+                    });
+
+                    _this5.openControl = btn.dataset.btn;
+                });
+            });
+        }
+    }, {
+        key: 'navCalculator',
+        value: function navCalculator() {
+            // Gsap
+            var tl = new TimelineMax();
+
+            this.navcalc = PubSub.subscribe('calcClick', function (msg, data) {
+
+                data.items.filter(function (item, i) {
+
+                    if (item.children[0].children[2].dataset.btn === data.from) {
+
+                        item.classList.remove('is-open');
+
+                        // tl.fromTo( item, 0.3, { height: '10em'},{ height: '2.75em'}, '-=0.1' )
+                        //     .staggerFromTo( item.children[1].children, 0.25, { opacity: 1, y: 0, scale: 1, autoAlpha: 1},{ opacity: 0, y: 20, scale: 0, autoAlpha: 0}, 0.1, '-=0.5' )
+                    }
+
+                    if (item.children[0].children[2].dataset.btn === data.to) {
+
+                        item.classList.add('is-open');
+
+                        // tl.fromTo( item, .5, { height: '2.75em'},{ height: '10em'} )
+                        //     .staggerFromTo( item.children[1].children, 0.25, { opacity: 0, y: 20, scale: 0},{ autoAlpha: 1, opacity: 1, y: 0, scale: 1}, 0.1, '-=0.5' );
+                    }
+                });
+
+                data.diagram.filter(function (item) {
+                    // console.log('D', item)
+
+                    if (item.dataset.btn === data.to) item.classList.add('is-active');
+
+                    if (item.dataset.btn === data.from) item.classList.remove('is-active');
+                });
+
+                // console.log('controlItem: ', data.button.parentNode.parentElement.classList[1]);
+            });
+        }
+    }, {
+        key: 'getPercent',
+        value: function getPercent() {
+            var _this6 = this;
+
+            var maxCheckBox = 6;
+
+            this.controlItem.filter(function (item, i, arr) {
+
+                // maxCheckBox = i + 1;
+
+                // if (item.children[0].children[0].checked) {
+                //             //     this.checkBox = this.checkBox + 1;
+                //             //     console.log('checkBox', this.checkBox, ' maxCheckBox', maxCheckBox);
+                //             // }
+                //             // if(!item.children[0].children[0].checked){
+                //             //     this.checkBox = this.checkBox - 1;
+                //             //     console.log('-checkBox', this.checkBox, ' -maxCheckBox', maxCheckBox);
+                //             // }
+
+                if (maxCheckBox === _this6.checkBox) {
+                    document.querySelector('.result-diagram').innerHTML = '100%';
+                    console.log('100%', _this6.checkBox);
+                }
+                if (_this6.checkBox !== maxCheckBox) {
+                    document.querySelector('.result-diagram').innerHTML = parseFloat(100 * _this6.checkBox / maxCheckBox).toFixed(0) + '%';
+                    console.log('--%', _this6.checkBox);
+                }
+            });
+        }
+    }, {
+        key: 'clickCheck',
+        value: function clickCheck() {
+            var _this7 = this;
+
+            this.controlBtn.filter(function (click) {
+                console.log(click.previousSibling.previousSibling.checked);
+                click.addEventListener('click', function () {
+                    if (!click.previousSibling.previousSibling.checked) {
+                        _this7.checkBox = _this7.checkBox + 1;
+                        console.log('checkBox', _this7.checkBox);
+                    } else {
+                        _this7.checkBox = _this7.checkBox - 1;
+                    }
+                    _this7.getPercent();
+                });
+            });
+        }
+    }, {
+        key: 'closeCalcItem',
+        value: function closeCalcItem() {
+            this.controlItem.filter(function (item) {
+                return item.classList.remove('is-open');
+            });
+            this.diagramBtn.filter(function (item) {
+                return item.classList.remove('is-active');
+            });
+        }
     }]);
 
     return PageNavigate;
 }();
-
-// let menu = new MainNav();
-// menu.init();
 
 var navtopage = new PageNavigate();
