@@ -249,7 +249,8 @@ body {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   background: url("../img/bg.jpg") #1d1c20 no-repeat top center/cover;
-  overflow: hidden; }
+  overflow: hidden;
+  height: 100vh; }
 
 h1, h2, h3, h4, h5, h6, p {
   margin: 0; }
@@ -326,9 +327,9 @@ header {
 
 /* btn */
 .btn {
-  border: 1px solid transparent;
-  -webkit-border-radius: 24px;
-          border-radius: 24px;
+  border: .0625em solid transparent;
+  -webkit-border-radius: 1.5em;
+          border-radius: 1.5em;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
   -webkit-flex-direction: row;
@@ -351,7 +352,8 @@ header {
   -webkit-transition: all .25s;
   -o-transition: all .25s;
   transition: all .25s;
-  cursor: pointer; }
+  cursor: pointer;
+  font-size: 1em; }
   .btn:hover {
     color: white; }
 
@@ -457,7 +459,7 @@ header {
   .menu-ico span {
     display: inline-block;
     background-color: #fff;
-    height: 1px;
+    height: .0625em;
     -webkit-transition: all .5s;
     -o-transition: all .5s;
     transition: all .5s; }
@@ -535,17 +537,21 @@ header {
 .content {
   position: absolute;
   left: 50%;
-  top: 8em;
-  -webkit-transform: translateX(-50%);
-      -ms-transform: translateX(-50%);
-          transform: translateX(-50%);
+  top: 50%;
+  -webkit-transform: translateY(-50%) translateX(-50%);
+      -ms-transform: translateY(-50%) translateX(-50%);
+          transform: translateY(-50%) translateX(-50%);
   text-align: center;
   -webkit-transition: all .5s;
   -o-transition: all .5s;
   transition: all .5s;
-  opacity: 0; }
+  opacity: 0;
+  visibility: hidden;
+  z-index: -1; }
   .content.is-active {
-    opacity: 1; }
+    visibility: visible;
+    opacity: 1;
+    z-index: 1; }
   .content.open-menu {
     left: -100% !important;
     -webkit-transition: all .5s;
@@ -765,9 +771,6 @@ footer {
     margin-left: 1.5em; }
 
 /* contact start*/
-.contacts {
-  top: 0; }
-
 .wraper-container {
   width: 100vw;
   height: 100vh;
@@ -836,7 +839,8 @@ footer {
     margin: 0;
     width: auto; }
     .contact-form .input-group > * {
-      margin-top: 2em; }
+      margin-top: 2em;
+      width: 16em; }
     .contact-form .input-group .btn-opacity.active-btn {
       background-color: white;
       color: black;
@@ -876,12 +880,13 @@ footer {
 
 .form-group input {
   background-color: transparent;
-  -webkit-border-radius: 24px;
-          border-radius: 24px;
+  -webkit-border-radius: 1.5em;
+          border-radius: 1.5em;
   border: 1px solid rgba(255, 255, 255, 0.7);
   height: 2em;
   color: white;
-  text-align: center; }
+  text-align: center;
+  font-size: 1em; }
 
 .pageofthanks {
   opacity: 0; }
@@ -917,7 +922,7 @@ footer {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  height: 1px;
+  height: .0625em;
   background-color: white; }
 
 ul.points {
@@ -1162,6 +1167,14 @@ ul.points {
   width: 90vw; }
   .landing-calc .wrapper > div {
     min-width: 30%;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1224,8 +1237,8 @@ ul.points {
   height: 2.75em;
   width: inherit;
   background-color: #36363D;
-  -webkit-border-radius: 24px;
-          border-radius: 24px;
+  -webkit-border-radius: 1.5em;
+          border-radius: 1.5em;
   border: transparent;
   display: -webkit-box;
   display: -webkit-flex;
@@ -1317,7 +1330,7 @@ ul.points {
   width: 0;
   height: 0;
   border-style: solid;
-  border-width: 8px 8px 0 8px;
+  border-width: 0.3em 0.3em 0 0.3em;
   border-color: white transparent transparent transparent; }
 
 .diagram-box {
@@ -1442,3 +1455,7 @@ ul.points {
       -webkit-transition: all .3s;
       -o-transition: all .3s;
       transition: all .3s; }
+    .diagram-box .diagram-btn.unset .icon-button_landing {
+      background: #36363D;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent; }

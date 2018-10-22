@@ -35,12 +35,10 @@ var PageNavigate = function () {
         // Plagin of calculator
         this.controlItem = htmlcolToObj(document.querySelectorAll('.control-item'));
         this.controlBtn = htmlcolToObj(document.querySelectorAll('.check-percent'));
-        this.controlBtn;
-        this.diagramBtn;
+        this.diagramBtn = htmlcolToObj(document.querySelectorAll('.diagram-btn'));
         this.navcalc;
-        this.controlItem;
         this.openControl = 1;
-        this.checkBox = 5;
+        this.checkBox = 6;
         this.getPercent();
         this.clickCheck();
 
@@ -217,10 +215,10 @@ var PageNavigate = function () {
                 });
 
                 if (data.to > data.from) {
-                    tl.fromTo(currentPage, 0.5, { x: '-50%', opacity: '1', autoAlpha: 1 }, { x: '-200%' }).to(currentPage, 0.1, { opacity: '0' }).fromTo(nextPage, 0.5, { x: '100%', opacity: '0', autoAlpha: 0 }, { x: '-50%', opacity: '1', autoAlpha: 1 });
+                    tl.fromTo(currentPage, 0.5, { x: '-50%', y: '-50%', opacity: '1', autoAlpha: 1 }, { x: '-200%' }).to(currentPage, 0.1, { opacity: '0' }).fromTo(nextPage, 0.5, { x: '100%', opacity: '0', autoAlpha: 0 }, { x: '-50%', y: '-50%', opacity: '1', autoAlpha: 1 });
                 }
                 if (data.to < data.from) {
-                    tl.fromTo(currentPage, 0.5, { x: '-50%', opacity: '1', autoAlpha: 1 }, { x: '200%' }).to(currentPage, 0.1, { opacity: '0' }).fromTo(nextPage, 0.5, { x: '-200%', opacity: '0', autoAlpha: 0 }, { x: '-50%', opacity: '1', autoAlpha: 1 });
+                    tl.fromTo(currentPage, 0.5, { x: '-50%', y: '-50%', opacity: '1', autoAlpha: 1 }, { x: '200%' }).to(currentPage, 0.1, { opacity: '0' }).fromTo(nextPage, 0.5, { x: '-200%', opacity: '0', autoAlpha: 0 }, { x: '-50%', y: '-50%', opacity: '1', autoAlpha: 1 });
                 }
 
                 // Changes Url
@@ -244,8 +242,12 @@ var PageNavigate = function () {
                 console.log('BTN', btn.dataset.btn);
 
                 btn.addEventListener('click', function (e) {
+
                     e.preventDefault();
                     e.stopPropagation();
+
+                    if (e.target.parentElement.parentElement.parentElement.matches('.is-open')) return;
+
                     _this5.closeCalcItem();
 
                     PubSub.publish('calcClick', {
@@ -270,21 +272,9 @@ var PageNavigate = function () {
 
                 data.items.filter(function (item, i) {
 
-                    if (item.children[0].children[2].dataset.btn === data.from) {
+                    if (item.children[0].children[2].dataset.btn === data.from) item.classList.remove('is-open');
 
-                        item.classList.remove('is-open');
-
-                        // tl.fromTo( item, 0.3, { height: '10em'},{ height: '2.75em'}, '-=0.1' )
-                        //     .staggerFromTo( item.children[1].children, 0.25, { opacity: 1, y: 0, scale: 1, autoAlpha: 1},{ opacity: 0, y: 20, scale: 0, autoAlpha: 0}, 0.1, '-=0.5' )
-                    }
-
-                    if (item.children[0].children[2].dataset.btn === data.to) {
-
-                        item.classList.add('is-open');
-
-                        // tl.fromTo( item, .5, { height: '2.75em'},{ height: '10em'} )
-                        //     .staggerFromTo( item.children[1].children, 0.25, { opacity: 0, y: 20, scale: 0},{ autoAlpha: 1, opacity: 1, y: 0, scale: 1}, 0.1, '-=0.5' );
-                    }
+                    if (item.children[0].children[2].dataset.btn === data.to) item.classList.add('is-open');
                 });
 
                 data.diagram.filter(function (item) {
@@ -294,8 +284,6 @@ var PageNavigate = function () {
 
                     if (item.dataset.btn === data.from) item.classList.remove('is-active');
                 });
-
-                // console.log('controlItem: ', data.button.parentNode.parentElement.classList[1]);
             });
         }
     }, {
@@ -304,28 +292,8 @@ var PageNavigate = function () {
             var _this6 = this;
 
             var maxCheckBox = 6;
-
-            this.controlItem.filter(function (item, i, arr) {
-
-                // maxCheckBox = i + 1;
-
-                // if (item.children[0].children[0].checked) {
-                //             //     this.checkBox = this.checkBox + 1;
-                //             //     console.log('checkBox', this.checkBox, ' maxCheckBox', maxCheckBox);
-                //             // }
-                //             // if(!item.children[0].children[0].checked){
-                //             //     this.checkBox = this.checkBox - 1;
-                //             //     console.log('-checkBox', this.checkBox, ' -maxCheckBox', maxCheckBox);
-                //             // }
-
-                if (maxCheckBox === _this6.checkBox) {
-                    document.querySelector('.result-diagram').innerHTML = '100%';
-                    console.log('100%', _this6.checkBox);
-                }
-                if (_this6.checkBox !== maxCheckBox) {
-                    document.querySelector('.result-diagram').innerHTML = parseFloat(100 * _this6.checkBox / maxCheckBox).toFixed(0) + '%';
-                    console.log('--%', _this6.checkBox);
-                }
+            this.controlItem.filter(function () {
+                return maxCheckBox === _this6.checkBox ? document.querySelector('.result-diagram').innerHTML = '100%' : document.querySelector('.result-diagram').innerHTML = parseFloat(100 * _this6.checkBox / maxCheckBox).toFixed(0) + '%';
             });
         }
     }, {
@@ -334,14 +302,21 @@ var PageNavigate = function () {
             var _this7 = this;
 
             this.controlBtn.filter(function (click) {
-                console.log(click.previousSibling.previousSibling.checked);
                 click.addEventListener('click', function () {
-                    if (!click.previousSibling.previousSibling.checked) {
-                        _this7.checkBox = _this7.checkBox + 1;
-                        console.log('checkBox', _this7.checkBox);
-                    } else {
-                        _this7.checkBox = _this7.checkBox - 1;
-                    }
+                    !click.previousSibling.previousSibling.checked ? _this7.checkBox = _this7.checkBox + 1 : _this7.checkBox = _this7.checkBox - 1;
+                    console.log(!click.previousSibling.previousSibling.checked);
+                    _this7.diagramBtn.filter(function (item) {
+                        console.log(click.previousSibling.previousSibling.dataset.btn);
+                        console.log(item.dataset.btn);
+
+                        if (item.dataset.btn === click.previousSibling.previousSibling.dataset.btn) {
+                            if (click.previousSibling.previousSibling.checked) {
+                                item.classList.add('unset');
+                            } else {
+                                item.classList.remove('unset');
+                            }
+                        }
+                    });
                     _this7.getPercent();
                 });
             });
