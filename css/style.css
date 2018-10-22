@@ -358,7 +358,7 @@ header {
     color: white; }
 
 .btn-opacity {
-  width: 13em;
+  min-width: 13em;
   border: 1px solid #AD0838;
   color: white;
   position: relative; }
@@ -371,6 +371,10 @@ header {
     -webkit-transition: all .25s;
     -o-transition: all .25s;
     transition: all .25s; }
+    .btn-opacity:hover .side-right, .btn-opacity.active-item .side-right {
+      background: #fff; }
+    .btn-opacity:hover .side-right::after, .btn-opacity.active-item .side-right::after {
+      border-left-color: #fff; }
   .btn-opacity i {
     position: absolute;
     right: .5em; }
@@ -578,6 +582,28 @@ footer {
     padding-bottom: 1em;
     padding-left: 2em; }
 
+/* arrows*/
+.arrow-side {
+  position: relative;
+  margin: 0 1em; }
+  .arrow-side.side-right {
+    width: 2em;
+    height: .1em;
+    background: rgba(255, 255, 255, 0.4); }
+    .arrow-side.side-right:after {
+      top: -0.24em;
+      right: -1.35em;
+      border-left-color: rgba(255, 255, 255, 0.4);
+      border-width: .325em 0 .325em 1.35em; }
+  .arrow-side:before, .arrow-side:after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 0;
+    height: 0;
+    border: 2.5em solid transparent;
+    border-right: 0; }
+
 /* defoult classes end */
 /* home start*/
 .main .title-slider, .main .title-nav {
@@ -665,6 +691,9 @@ footer {
             transform: translateX(0.1em); }
 
 /* slider end */
+.services .btn-simple {
+  padding: .5em 2em; }
+
 .services .slides-line {
   font-size: 1.5em;
   height: 21.3125em;
@@ -675,24 +704,23 @@ footer {
         -ms-transform: scale(0.95);
             transform: scale(0.95);
     padding-right: unset;
-    width: 14.65em;
-    -webkit-transition: all .5s;
-    -o-transition: all .5s;
-    transition: all .5s; }
-    .services .slides-line > ul > li:hover, .services .slides-line > ul > li.active-item {
-      background-image: url(../img/service_1.png);
-      -webkit-transition: all .5s;
-      -o-transition: all .5s;
-      transition: all .5s; }
-      .services .slides-line > ul > li:hover .btn-simple, .services .slides-line > ul > li.active-item .btn-simple {
-        background-color: #FF0048;
-        color: white;
-        border-color: #FF0048; }
+    width: 14.65em; }
+    .services .slides-line > ul > li:hover .btn-simple, .services .slides-line > ul > li.active-item .btn-simple {
+      background-color: #FF0048;
+      color: white;
+      border-color: #FF0048; }
+    .services .slides-line > ul > li:nth-child(1):hover, .services .slides-line > ul > li:nth-child(1).active-item {
+      background-image: url(../img/service_1.png); }
+    .services .slides-line > ul > li:nth-child(2):hover, .services .slides-line > ul > li:nth-child(2).active-item {
+      background-image: url(../img/service_2.png); }
+    .services .slides-line > ul > li:nth-child(3):hover, .services .slides-line > ul > li:nth-child(3).active-item {
+      background-image: url(../img/service_3.png); }
+    .services .slides-line > ul > li:nth-child(4):hover, .services .slides-line > ul > li:nth-child(4).active-item {
+      background-image: url(../img/service_4.png); }
     .services .slides-line > ul > li ul {
       text-align: left; }
 
 .services .card {
-  padding: 0 1.45833333333em;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -705,7 +733,12 @@ footer {
   -webkit-box-align: center;
   -webkit-align-items: center;
       -ms-flex-align: center;
-          align-items: center; }
+          align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 100%; }
 
 .services .card-title {
   padding: 1.4em 0; }
@@ -1405,10 +1438,7 @@ ul.points {
               transform: translateX(-50%) translateY(-100%); }
     .diagram-box .diagram-btn .icon-button_landing {
       color: #069AD7;
-      font-size: 5em;
-      -webkit-transition: all .3s;
-      -o-transition: all .3s;
-      transition: all .3s; }
+      font-size: 5em; }
     .diagram-box .diagram-btn:nth-child(1) {
       top: 0;
       left: 50%;
@@ -1451,10 +1481,7 @@ ul.points {
       background: linear-gradient(380deg, #4e2a5f, #f1005b);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      cursor: pointer;
-      -webkit-transition: all .3s;
-      -o-transition: all .3s;
-      transition: all .3s; }
+      cursor: pointer; }
     .diagram-box .diagram-btn.unset .icon-button_landing {
       background: #36363D;
       -webkit-background-clip: text;
