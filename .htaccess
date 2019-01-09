@@ -1,6 +1,0 @@
-
-RewriteEngine on
-Options +FollowSymlinks
-RewriteBase /
-
-RewriteRule ^([0-9a-zA-Z]+)$ /index.html#$1 [NE]

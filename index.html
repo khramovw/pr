@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>TopRated</title>
-    <link rel="icon" type="image/png" href="img/favicon.png">
+    <link rel="icon" type="image/png" href="img/favicon.ico">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -32,7 +32,7 @@
                     </a>
                 </div>
                 <div class="nav-wraper">
-                    <button class="btn btn-opacity">
+                    <button data-page="6" class="btn btn-js btn-opacity">
                         <span>Быстрый заказ</span>
                         <span class="arrow-side side-right"></span>
                     </button>
@@ -56,14 +56,14 @@
         <!--main menu start-->
         <nav class="main-menu menu-items-js">
             <ul>
-                <li class="large-item"><a data-target="2" href="#">Услуги</a></li>
-                <li class="large-item"><a data-target="5" href="#">Портфолио</a></li>
-                <li class="large-item"><a data-target="3" href="#">Контакты</a></li>
-                <li class="small-item disabled-item"><a href="#">Личный кабинет</a></li>
-                <li class="small-item disabled-item"><a href="#">Юр.информация</a></li>
-                <li class="small-item"><a data-target="4" href="#">Результат</a></li>
-                <li class="small-item disabled-item"><a href="#">Вакансии</a></li>
-                <li class="small-item disabled-item"><a href="#">Брифы</a></li>
+                <li class="main-menu-item large-item"><a data-target="2" href="#">Услуги</a></li>
+                <li class="main-menu-item large-item"><a data-target="3" href="#">Портфолио</a></li>
+                <li class="main-menu-item large-item"><a data-target="5" href="#">Контакты</a></li>
+                <li class="main-menu-item small-item disabled-item"><a href="#">Личный кабинет</a></li>
+                <li class="main-menu-item small-item disabled-item"><a href="#">Юр.информация</a></li>
+                <li class="main-menu-item small-item"><a data-target="4" href="#">Результат</a></li>
+                <li class="main-menu-item small-item disabled-item"><a href="#">Вакансии</a></li>
+                <li class="main-menu-item small-item"><a data-target="9" href="#">Брифы</a></li>
             </ul>
         </nav>
         <!--main menu end-->
@@ -79,8 +79,8 @@
         </nav>
         <!--buttons social network end-->
 
-        <!--main content start-->
-        <section data-page="1" data-pagename="home" class="main content open-menu-js is-active">
+        <!--home start-->
+        <section data-page="1" data-pagename="home" class="main content open-menu-js">
             <div class="title">
                 <h1 class="h1">Доставка веб-сайта “на дом”</h1>
             </div>
@@ -100,17 +100,9 @@
                     <nav class="slides-line">
                         <ul>
                            <li><img src="img/1.jpg" alt=""></li>
-                           <li><img src="img/2.jpg" alt=""></li>
+                           <li><img src="img/5.jpg" alt=""></li>
                            <li><img src="img/3.jpg" alt=""></li>
                            <li><img src="img/4.jpg" alt=""></li>
-                           <li><img src="img/2.jpg" alt=""></li>
-                           <li><img src="img/2.jpg" alt=""></li>
-                           <li><img src="img/2.jpg" alt=""></li>
-                           <li><img src="img/2.jpg" alt=""></li>
-                           <li><img src="img/2.jpg" alt=""></li>
-                           <li><img src="img/2.jpg" alt=""></li>
-                           <li><img src="img/2.jpg" alt=""></li>
-                           <li><img src="img/2.jpg" alt=""></li>
                         </ul>
                     </nav>
                     <!--<div class="right arrow">-->
@@ -124,24 +116,24 @@
             <!--slider end-->
 
             <nav class="nav-forms">
-                <div class="title-nav">Хотите такой жк только лучше ?</div>
+                <div class="title-nav">Хотите такой же только лучше ?</div>
                 <ul>
                     <li>
-                        <button class="btn btn-opacity">Landing page</button>
+                        <button data-page="7" class="btn btn-opacity btn-js">Landing page</button>
                     </li>
                     <li>
-                        <button class="btn btn-opacity active-item">Хочу</button>
+                        <button data-page="6" class="btn btn-opacity btn-js active-item">Хочу</button>
                     </li>
                     <li>
-                        <button class="btn btn-opacity">Интернет магазин</button>
+                        <button data-page="8" class="btn btn-opacity btn-js">Интернет магазин</button>
                     </li>
                 </ul>
             </nav>
 
         </section>
-        <!--main content end-->
+        <!--home end-->
 
-        <!--main content start-->
+        <!--services start-->
         <section data-page="2" data-pagename="services" class="services content">
 
             <div class="title">
@@ -195,7 +187,7 @@
                                     </div>
                                     <div class="content-row">
                                         <div class="card-price">от $1499</div>
-                                        <button class="btn btn-simple">
+                                        <button data-page="8" class="btn btn-simple btn-js">
                                             подробнее
                                         </button>
                                         <div class="description-service">
@@ -234,7 +226,7 @@
                                     </div>
                                     <div class="content-row">
                                         <div class="card-price">от $799</div>
-                                        <button class="btn btn-simple">
+                                        <button data-page="7" class="btn btn-simple btn-js">
                                             подробнее
                                         </button>
                                         <div class="description-service">
@@ -274,7 +266,7 @@
                                     </div>
                                     <div class="content-row">
                                         <div class="card-price">от $470</div>
-                                        <button class="btn btn-simple">
+                                        <button data-page="" class="btn btn-simple btn-js">
                                             подробнее
                                         </button>
                                         <div class="description-service">
@@ -317,7 +309,7 @@
                                     </div>
                                     <div class="content-row">
                                         <div class="card-price">от $1875</div>
-                                        <button class="btn btn-simple">
+                                        <button data-page="" class="btn btn-simple btn-js">
                                             подробнее
                                         </button>
                                         <div class="description-service">
@@ -348,90 +340,160 @@
             <!--slider end-->
 
         </section>
-        <!--main content end-->
+        <!--services end-->
 
-        <!--main content start-->
-        <section data-page="7" class="parley content">
+        <!--portfolio start-->
+        <section data-page="3" data-pagename="portfolio" class="portfolio content">
             <div class="title">
-                <h1 class="h1">Обсудить проект</h1>
+                <h1 class="h1">Порфолио</h1>
             </div>
-            <div class="subtitle">Крутые проекты начинаются с заполнения этой формы</div>
 
-            <div class="input-group form-group">
-                <input type="text" placeholder="Имя">
-                <input type="tel" placeholder="Телефон">
-                <button class="btn btn-opacity active-btn">Оставить заявку</button>
-            </div>
-            <!--/input-group-->
-            <div class="subtitle">Или позвоните нам: +38 (098) 274-69-23</div>
+            <!--slider start-->
+            <div class="slider-works">
 
-        </section>
-        <!--main content end-->
+                <div class="slides-wrapper">
 
-        <!--main content start-->
-        <section data-page="8" class="pageofthanks content">
-            <div class="title">
-                <h1 class="h1">Спасибо</h1>
-            </div>
-            <div class="subtitle">
-                Менеджер уже увидел вашу заявку и прыгает от радости,
-                сейчас он успокоится и перезвонит вам ;)
-            </div>
-            <div class="subtitle">Хотите посмотреть наши работы?</div>
-
-            <div class="input-group form-group">
-                <button class="btn btn-opacity active-btn">Портфолио</button>
-            </div>
-            <!--/input-group-->
-
-        </section>
-        <!--main content end-->
-
-        <!--main content start-->
-        <section data-page="3" data-pagename="contacts" class="contacts content">
-
-            <div class="wraper-container">
-
-                <div class="contact-info">
-                    <div class="title">
-                        <h1 class="h1">Контакты</h1>
+                    <div class="slides-line">
+                        <ul>
+                            <li class="slide current-slide">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="logo">
+                                            <a href="/">
+                                                <img src="img/logo.png" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="card-title">
+                                            <h2 class="h2">Ребрендинг и редизайн сайта нашей компании</h2>
+                                        </div>
+                                        <div class="card-descriptions">
+                                            <div class="card-date">27 Октября 2018</div>
+                                            <div class="card-tags">Branding, UI/UX Design, Web Development</div>
+                                        </div>
+                                    </div>
+                                    <div class="card-img-wrapper">
+                                        <img src="img/sl1.png" alt="">
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="slide ">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="logo">
+                                            <a href="/">
+                                                <img src="img/logo.png" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="card-title">
+                                            <h2 class="h2">Ребрендинг и редизайн сайта нашей компании</h2>
+                                        </div>
+                                        <div class="card-descriptions">
+                                            <div class="card-date">27 Октября 2018</div>
+                                            <div class="card-tags">Branding, UI/UX Design, Web Development</div>
+                                        </div>
+                                    </div>
+                                    <div class="card-img-wrapper">
+                                        <img src="img/sl2.png" alt="">
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="slide ">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="logo">
+                                            <a href="/">
+                                                <img src="img/logo.png" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="card-title">
+                                            <h2 class="h2">Ребрендинг и редизайн сайта нашей компании</h2>
+                                        </div>
+                                        <div class="card-descriptions">
+                                            <div class="card-date">27 Октября 2018</div>
+                                            <div class="card-tags">Branding, UI/UX Design, Web Development</div>
+                                        </div>
+                                    </div>
+                                    <div class="card-img-wrapper">
+                                        <img src="img/sl3.png" alt="">
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="slide ">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="logo">
+                                            <a href="/">
+                                                <img src="img/logo.png" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="card-title">
+                                            <h2 class="h2">Ребрендинг и редизайн сайта нашей компании</h2>
+                                        </div>
+                                        <div class="card-descriptions">
+                                            <div class="card-date">27 Октября 2018</div>
+                                            <div class="card-tags">Branding, UI/UX Design, Web Development</div>
+                                        </div>
+                                    </div>
+                                    <div class="card-img-wrapper">
+                                        <img src="img/sl4.png" alt="">
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="slide ">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="logo">
+                                            <a href="/">
+                                                <img src="img/logo.png" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="card-title">
+                                            <h2 class="h2">Ребрендинг и редизайн сайта нашей компании</h2>
+                                        </div>
+                                        <div class="card-descriptions">
+                                            <div class="card-date">27 Октября 2018</div>
+                                            <div class="card-tags">Branding, UI/UX Design, Web Development</div>
+                                        </div>
+                                    </div>
+                                    <div class="card-img-wrapper">
+                                        <img src="img/sl5.png" alt="">
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
 
-                    <div class="contact-item">
-                        <p>+38 (050) 736 3902</p>
-                    </div>
-                    <div class="contact-item">
-                        <p>Украина, Харьков</p>
-                        <p>ул. Короленко 20, 61000</p>
-                    </div>
-                    <div class="contact-item">
-                        <p>Toprated.digitalagency@gmail.com</p>
-                    </div>
                 </div>
-                <!--/contact-info-->
 
-                <div class="contact-form">
-                    <div class="title-form">Получить консультацию</div>
-                    <div class="description-form">
-                        <p>Оставьте заявку и мы свяжемся с Вами в ближайшеее время</p>
+                <div class="progressbar">
+
+                    <div class="left arrow">
+                        <button class="btn-slide">
+                            <span data-count="-1" class="chevron">
+                                <span></span><span></span>
+                            </span>
+                        </button>
                     </div>
-                    <form>
-                        <div class="input-group form-group">
-                            <input type="text" placeholder="Имя">
-                            <input type="tel" placeholder="Телефон">
-                            <button class="btn btn-opacity active-btn">Оставить заявку</button>
-                        </div>
-                        <!--/input-group-->
-                    </form>
-                </div>
-                <!--/contact-form-->
-            </div>
 
+                    <div class="counter"><span class="to">4</span>/<span class="from">26</span></div>
+
+                    <div class="right arrow">
+                        <button class="btn-slide">
+                            <span data-count="1" class="chevron">
+                                <span></span><span></span>
+                            </span>
+                        </button>
+                    </div>
+
+                </div>
+
+            </div>
+            <!--slider end-->
 
         </section>
-        <!--main content end-->
+        <!--portfolio end-->
 
-        <!--main content start-->
+        <!--result start-->
         <section data-page="4" data-pagename="result" class="result content">
             <div class="title">
                 <h1 class="h1">Результат</h1>
@@ -491,10 +553,103 @@
             </div>
 
         </section>
-        <!--main content end-->
+        <!--result end-->
 
-        <!--main content start-->
-        <section data-page="6" data-pagename="cooperation" class="result cooperation content">
+        <!--contacts start-->
+        <section data-page="5" data-pagename="contacts" class="contacts content">
+
+            <div class="wraper-container">
+
+                <div class="contact-info">
+                    <div class="title">
+                        <h1 class="h1">Контакты</h1>
+                    </div>
+
+                    <div class="contact-item">
+                        <p>+38 (050) 736 3902</p>
+                        <p>+38 (073) 736 3902</p>
+                    </div>
+                    <div class="contact-item">
+                        <p>Украина, Харьков</p>
+                        <p>ул. Короленко 20, 61000</p>
+                    </div>
+                    <div class="contact-item">
+                        <p>Toprated.digitalagency@gmail.com</p>
+                    </div>
+                </div>
+                <!--/contact-info-->
+
+                <div class="contact-form">
+                    <div class="title-form">Получить консультацию</div>
+                    <div class="description-form">
+                        <p>Оставьте заявку и мы свяжемся с Вами в ближайшеее время</p>
+                    </div>
+                    <form class="form-contact" name="contact" novalidate>
+
+                        <div class="input-group form-group">
+                            <input type="hidden" name="form_name" value="contact" data-required="^[а-яА-ЯёЁa-zA-Z ]{2,20}$">
+                            <input type="hidden" name="check" value="" data-required="^[а-яА-ЯёЁa-zA-Z ]{0,20}$">
+                            <input type="text" name="name" placeholder="Имя" data-required="^[а-яА-ЯёЁa-zA-Z ]{2,20}$">
+                            <input type="email" name="email" placeholder="Email" data-required="^[-\w.]+@([A-z0-9][-A-z0-9]+\.)+[A-z]{2,4}$">
+                            <input type="tel" name="tel" placeholder="Телефон" data-required="^[+0-9]{9,13}$">
+                            <button type="submit"  class="btn btn-opacity active-btn">Оставить заявку</button>
+                        </div>
+                        <!--/input-group-->
+                    </form>
+                </div>
+                <!--/contact-form-->
+            </div>
+
+        </section>
+        <!--contacts end-->
+
+        <!--parley start-->
+        <section data-page="6" class="parley content">
+            <div class="title">
+                <h1 class="h1">Обсудить проект</h1>
+            </div>
+            <div class="subtitle">Крутые проекты начинаются с заполнения этой формы</div>
+
+            <form name="content" novalidate>
+                <div class="input-group form-group">
+                    <input type="hidden" name="form_name" value="parlay" data-required="^[а-яА-ЯёЁa-zA-Z ]{2,20}$">
+                    <input type="hidden" name="check" value="" data-required="^[а-яА-ЯёЁa-zA-Z ]{0,20}$">
+                    <input type="text" name="name" placeholder="Имя" data-required="^[а-яА-ЯёЁa-zA-Z ]{2,20}$">
+                    <input type="tel" name="tel" placeholder="Телефон" data-required="^[+0-9]{9,13}$">
+                    <button class="btn btn-opacity active-btn">Оставить заявку</button>
+                </div>
+            </form>
+            <div class="subtitle">Или позвоните нам: +38 (050) 736 3902</div>
+
+            <!--/input-group-->
+
+
+        </section>
+        <!--parley end-->
+
+        <!--pageofthanks start-->
+        <section data-page="" class="pageofthanks content">
+            <div class="title">
+                <h1 class="h1">Спасибо</h1>
+            </div>
+            <div class="subtitle">
+                Менеджер уже увидел вашу заявку и прыгает от радости,
+                сейчас он успокоится и перезвонит вам ;)
+            </div>
+            <div class="subtitle">Хотите посмотреть наши работы?</div>
+
+            <div class="input-group form-group">
+                <button class="btn btn-opacity active-btn">Портфолио</button>
+            </div>
+            <!--/input-group-->
+
+        </section>
+        <!--pageofthanks end-->
+
+
+
+        <!--result cooperation start-->
+        <section data-page="" data-pagename="cooperation" class="result cooperation content">
             <div class="title">
                 <h1 class="h1">Результат</h1>
             </div>
@@ -544,115 +699,10 @@
             </div>
 
         </section>
-        <!--main content end-->
+        <!--result cooperation end-->
 
-        <!--main content start-->
-        <section data-page="5" data-pagename="portfolio" class="portfolio content">
-            <div class="title">
-                <h1 class="h1">Порфолио</h1>
-            </div>
-
-            <!--slider start-->
-            <div class="slider-works">
-
-                <div class="slides-wrapper">
-
-                    <nav class="slides-line">
-                        <ul>
-                            <li class="previus-slide">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <div class="logo">
-                                            <a href="/">
-                                                <img src="img/logo.png" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="card-title">
-                                            <h2 class="h2">Ребрендинг и редизайн сайта нашей компании</h2>
-                                        </div>
-                                        <div class="card-descriptions">
-                                            <div class="card-date">27 Октября 2018</div>
-                                            <div class="card-tags">Branding, UI/UX Design, Web Development</div>
-                                        </div>
-                                    </div>
-                                    <div class="card-img-wrapper">
-                                        <img src="img/sl.png" alt="">
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="current-slide">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <div class="logo">
-                                            <a href="/">
-                                                <img src="img/logo.png" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="card-title">
-                                            <h2 class="h2">Ребрендинг и редизайн сайта нашей компании</h2>
-                                        </div>
-                                        <div class="card-descriptions">
-                                            <div class="card-date">27 Октября 2018</div>
-                                            <div class="card-tags">Branding, UI/UX Design, Web Development</div>
-                                        </div>
-                                    </div>
-                                    <div class="card-img-wrapper">
-                                        <img src="img/sl.png" alt="">
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="next-slide">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <div class="logo">
-                                            <a href="/">
-                                                <img src="img/logo.png" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="card-title">
-                                            <h2 class="h2">Ребрендинг и редизайн сайта нашей компании</h2>
-                                        </div>
-                                        <div class="card-descriptions">
-                                            <div class="card-date">27 Октября 2018</div>
-                                            <div class="card-tags">Branding, UI/UX Design, Web Development</div>
-                                        </div>
-                                    </div>
-                                    <div class="card-img-wrapper">
-                                        <img src="img/sl.png" alt="">
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                    </nav>
-
-                </div>
-
-                <div class="progressbar">
-
-                    <div class="left arrow">
-                        <button class="btn-slide">
-                            <i class="material-icons">arrow_back_ios</i>
-                        </button>
-                    </div>
-
-                    <div class="counter">4/26</div>
-
-                    <div class="right arrow">
-                        <button class="btn-slide">
-                            <i class="material-icons">arrow_forward_ios</i>
-                        </button>
-                    </div>
-
-                </div>
-
-            </div>
-            <!--slider end-->
-
-        </section>
-        <!--main content end-->
-
-        <!--main content start-->
-        <section data-page="9" class="landing-calc content">
+        <!--landing-calc start-->
+        <section data-page="7" class="landing-calc calc-lp content  is-active">
             <div class="title">
                 <h1 class="h1">Landing page</h1>
             </div>
@@ -660,29 +710,33 @@
             <div class="wrapper">
                 <div class="info-box">
                     <div class="subtitle">
-                        <h2>Лендинг – платформа, функционирующая по принципу «зашёл, заинтересовался, заказал».</h2>
+                        <h2 class="h2">
+                            Лендинг – платформа, работающая по принципу «зашёл, заинтересовался, заказал».
+                        </h2>
                         <p>
-                            Это сайт, кроющий в себе одну единственную функцию – продать посетителю одну единственную
-                            вещь: билет на тренинг или конференцию, акой-нибудь аксессуар или элемент одежды,
-                            посещение заведения или даже приглашение на марафон, который пройдёт в следующем месяце.
+                            Как это работает?
                         </p>
                     </div>
                     <div class="contet-wrapper">
                         <p>
-                            Как это работает?
-                            Лендинг пейдж – место, где предлагается что-то одно. Этим он и отличается от обычного сайта.
-                            Может быть, Вы – бизнес-тренер? В этом случае, задача лендинга продать Ваши курсы,
-                            посещение Ваших семинаров, Ваши книги. Продать Вас. Грамотно составленный одностраничный
-                            сайт станет отличным помощником в этом. А может, у Вас есть магазин, в котором продаётся
-                            уникальный и очень маржинальный продукт? Может, Вы занимаетесь подбором б/у автомобилей
-                            или пригоном их из США? А может, у Вас небольшой маникюрный салон или парикмахерская?
-                            Лендинг отлично подойдёт для представления всех этих видов бизнеса.
+                            Это сайт, несущий одну единственную функцию – продать посетителю одну единственную вещь:
+                            билет на тренинг, какой-нибудь аксессуар или элемент одежды,
+                            посещение заведения или даже приглашение на марафон.
+                        </p>
+                        <p>
+                            Лендинг – место, где предлагается что-то одно. Вы – бизнес-тренер? В этом случае,
+                            задача лендинга продать Ваши курсы, посещение семинаров, книги. Продать Вас.
+                            А может, у Вас есть магазин, в котором продаётся уникальный и очень маржинальный продукт?
+                            А может, у Вас небольшой салон или парикмахерская?
+                            Грамотно составленный одностраничный сайт станет отличным помощником в этом.
+                        </p>
+                        <p>
                             Что важно?
-                            Основная задача лендинга – заинтересовать посетителя за несколько первых секунд.
-                            С большой долей вероятности, посетитель лаже не собирается ничего покупать,
-                            переходя на сайт из поисковой системы и социальной сети. Но внешняя составляющая сайта
-                            и привлекательное текстовое наполнение должны сделать так, чтобы потенциальный клиент
-                            заполнил соответствующие поля и из посетителя сайта стал заказчиком.
+                            Основная задача – заинтересовать посетителя с первых секунд.
+                            С большой долей вероятности, посетитель даже не собирается ничего покупать,
+                            переходя на сайт из поисковой системы и социальной сети.
+                            Но привлекательность сайта сделает так,
+                            чтобы потенциальный клиент заполнил нужные поля и сделал заказ.
                         </p>
                     </div>
                 </div>
@@ -692,7 +746,7 @@
                             <div class="title-diagram">Эффективность</div>
                             <div class="result-diagram">100%</div>
                         </div>
-                        <ul class="diagram-items">
+                        <ul class="diagram-items landing">
                             <li data-btn="1" class="diagram-btn is-active">
                                 <img src="img/control-ico-1.svg" alt="">
                                 <i class="icon-button_landing"></i>
@@ -716,6 +770,26 @@
                             <li data-btn="6" class="diagram-btn">
                                 <img src="img/control-ico-6.svg" alt="">
                                 <i class="icon-button_landing"></i>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="counter-diagrem">
+                        <ul>
+                            <li class="project-cost">
+                                <div class="wrap-col title">Стоимость проекта:</div>
+                                <div class="wrap-col count">$<span>985</span></div>
+                            </li>
+                            <li class="implementation-time">
+                                <div class="wrap-col title">Время на реализацию:</div>
+                                <div class="wrap-col count"><span>23</span> дней</div>
+                            </li>
+                            <li>
+                                <div class="wrap-col">
+                                    <button data-page="6" class="btn btn-js btn-simple is-active">обсудить проект</button>
+                                </div>
+                                <div class="wrap-col">
+                                    <button data-page="2" class="btn btn-js btn-simple">назад к услугам</button>
+                                </div>
                             </li>
                         </ul>
                     </div>
@@ -865,9 +939,424 @@
                 </div>
             </div>
         </section>
-        <!--main content end-->
+        <!--landing-calc end-->
+
+        <!--calc-shop start-->
+        <section data-page="8" class="landing-calc calc-shop content">
+            <div class="title">
+                <h1 class="h1">Интернет магазин</h1>
+            </div>
+
+            <div class="wrapper">
+                <div class="info-box">
+                    <div class="subtitle">
+                        <h2>Интернет-магазин это прекрасная возможность значительно масштабировать торговый бизнес в интернете. </h2>
+                        <p>
+                            Как это работает?
+                        </p>
+                    </div>
+                    <div class="contet-wrapper">
+                        <p>
+                            Основная задача интернет-магазина – дать человеку возможность купить всё,
+                            что ему нужно, не вставая с дивана.
+                        </p>
+                        <p>
+                            Посетитель переходит при помощи рекламы на сайт,
+                            просматривает перечень предоставляемых товаров/ услуг,
+                            выбирает нужные ему, после чего они переносятся в покупательскую «корзину».
+                            Когда все нужные товары выбраны, клиент вносит свои личные данные и переходит к оплате:
+                            при помощи банковской карты, электронными деньгами, наличными при получении товара.
+                        </p>
+                        <p>
+                            Что важно?
+                            Интернет-магазин должен быть динамичным. Для поддержания актуальности каталога,
+                            необходимо регулярно, удалять неактуальные предложения, редактировать цены.
+                            Оформление заказа также должно быть максимально  комфортно и должно
+                            включать в тебя минимальное количество шагов, т.к. на этапе оплаты из-за сложности
+                            или излишнего количества полей для заполнения личных данных,
+                            может отсеиваться до 40% покупателей.
+                        </p>
+                    </div>
+                </div>
+                <div class="diagram-box">
+                    <div class="diagram-wrapper">
+                        <div class="efficiency-diagram">
+                            <div class="title-diagram">Эффективность</div>
+                            <div class="result-diagram">100%</div>
+                        </div>
+                        <ul class="diagram-items shop">
+                            <li data-btn="7" class="diagram-btn is-active">
+                                <img src="img/control-ico-1.svg" alt="">
+                                <i class="icon-button_onlineshope"></i>
+                            </li>
+                            <li data-btn="8" class="diagram-btn">
+                                <img src="img/control-ico-2.svg" alt="">
+                                <i class="icon-button_onlineshope"></i>
+                            </li>
+                            <li data-btn="9" class="diagram-btn">
+                                <img src="img/control-ico-3.svg" alt="">
+                                <i class="icon-button_onlineshope"></i>
+                            </li>
+                            <li data-btn="10" class="diagram-btn">
+                                <img src="img/control-ico-4.png" alt="">
+                                <i class="icon-button_onlineshope"></i>
+                            </li>
+                            <li data-btn="11" class="diagram-btn">
+                                <img src="img/control-ico-5.png" alt="">
+                                <i class="icon-button_onlineshope"></i>
+                            </li>
+                            <li data-btn="12" class="diagram-btn">
+                                <img src="img/control-ico-6.svg" alt="">
+                                <i class="icon-button_onlineshope"></i>
+                            </li>
+                            <li data-btn="13" class="diagram-btn">
+                                <img src="img/control-ico-1.svg" alt="">
+                                <i class="icon-button_onlineshope"></i>
+                            </li>
+                            <li data-btn="14" class="diagram-btn">
+                                <img src="img/control-ico-2.svg" alt="">
+                                <i class="icon-button_onlineshope"></i>
+                            </li>
+                            <li data-btn="15" class="diagram-btn">
+                                <img src="img/control-ico-3.svg" alt="">
+                                <i class="icon-button_onlineshope"></i>
+                            </li>
+                            <li data-btn="16" class="diagram-btn">
+                                <img src="img/control-ico-4.png" alt="">
+                                <i class="icon-button_onlineshope"></i>
+                            </li>
+                            <li data-btn="17" class="diagram-btn">
+                                <img src="img/control-ico-5.png" alt="">
+                                <i class="icon-button_onlineshope"></i>
+                            </li>
+                            <li data-btn="18" class="diagram-btn">
+                                <img src="img/control-ico-6.svg" alt="">
+                                <i class="icon-button_onlineshope"></i>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="counter-diagrem">
+                        <ul>
+                            <li  class="project-cost">
+                                <div class="wrap-col title">Стоимость проекта:</div>
+                                <div class="wrap-col count">$<span>95</span></div>
+                            </li>
+                            <li  class="implementation-time">
+                                <div class="wrap-col title">Время на реализацию:</div>
+                                <div class="wrap-col count"><span>6</span> дней</div>
+                            </li>
+                            <li>
+                                <div class="wrap-col">
+                                    <button data-page="6" class="btn btn-js btn-simple is-active">обсудить проект</button>
+                                </div>
+                                <div class="wrap-col">
+                                    <button data-page="2" class="btn btn-js btn-simple">назад к услугам</button>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="control-box shop">
+                    <ul>
+                        <li class="control-item is-open">
+                            <div class="control-button">
+                                <input data-btn="7" type="checkbox" id="copyright-shop" checked>
+                                <label class="check-percent"  for="copyright-shop">
+                                    <span>
+                                        <img src="img/shape.svg" alt="">
+                                    </span>
+                                </label>
+                                <button data-btn="7" class="control-btn">
+                                    <p>Копирайтинг</p>
+                                    <span class="arrow-down"></span>
+                                </button>
+                            </div>
+                            <div class="control-description">
+                                <p>
+                                    Текстовое заполнение сайта:
+                                </p>
+                                <p>
+                                    SEO, продающие тексты для сайтов, продающих услуги, описание функционала или компании, прочие тексты
+                                </p>
+                            </div>
+                        </li>
+                        <li class="control-item">
+                            <div class="control-button">
+                                <input data-btn="8" type="checkbox" id="behavior-shop" checked>
+                                <label class="check-percent"  for="behavior-shop">
+                                    <span>
+                                        <img src="img/shape.svg" alt="">
+                                    </span>
+                                </label>
+                                <button data-btn="8" class="control-btn">
+                                    <p>Сценарий поведения</p>
+                                    <span class="arrow-down"></span>
+                                </button>
+                            </div>
+                            <div class="control-description">
+                                <p>
+                                    Описание истории деятельности пользователя на сайте
+                                </p>
+                                <p>
+                                    Нужны для определения того, как пользователь ведёт себя на сайте
+                                </p>
+                                <p>
+                                    Oн помогает качественнее анализировать
+                                </p>
+                            </div>
+                        </li>
+                        <li class="control-item">
+                            <div class="control-button">
+                                <input data-btn="9" type="checkbox" id="analitics-shop" checked>
+                                <label class="check-percent"  for="analitics-shop">
+                                    <span>
+                                        <img src="img/shape.svg" alt="">
+                                    </span>
+                                </label>
+                                <button data-btn="9" class="control-btn">
+                                    <p>Аналитика</p>
+                                    <span class="arrow-down"></span>
+                                </button>
+                            </div>
+                            <div class="control-description">
+                                <p>
+                                    Веб-аналитика :
+                                </p>
+                                <p>
+                                    Система для сбора и анализа информации о посетителях сайтов.
+                                    Она дает возможность отслеживать эффективность трафика в разрезе конечных заказов.
+                                </p>
+                            </div>
+                        </li>
+                        <li class="control-item">
+                            <div class="control-button">
+                                <input data-btn="10" type="checkbox" id="crm-shop" checked>
+                                <label class="check-percent"  for="crm-shop">
+                                    <span>
+                                        <img src="img/shape.svg" alt="">
+                                    </span>
+                                </label>
+                                <button data-btn="10" class="control-btn">
+                                    <p>CRM система</p>
+                                    <span class="arrow-down"></span>
+                                </button>
+                            </div>
+                            <div class="control-description">
+                                <p>
+                                    Cтатистика заказов клиента:
+                                </p>
+                                <p>
+                                    CRM-система даёт возможность структурировать все контакты клиентов и посетителей сайта внутри системы
+                                </p>
+                            </div>
+                        </li>
+                        <li class="control-item">
+                            <div class="control-button">
+                                <input data-btn="11" type="checkbox" id="trafic-shop" checked>
+                                <label class="check-percent"  for="trafic-shop">
+                                    <span>
+                                        <img src="img/shape.svg" alt="">
+                                    </span>
+                                </label>
+                                <button data-btn="11" class="control-btn">
+                                    <p>Трафик</p>
+                                    <span class="arrow-down"></span>
+                                </button>
+                            </div>
+                            <div class="control-description">
+                                <p>
+                                    Это общее количество уникальных посетителей:
+                                </p>
+                                <p>
+                                    Источниками трафика могут служить поисковые системы,
+                                    социальные сети, торговые площадки,
+                                    прямые переходы на сайт.
+                                </p>
+                            </div>
+                        </li>
+                        <li class="control-item">
+                            <div class="control-button">
+                                <input data-btn="12" type="checkbox" id="design-shop" checked>
+                                <label class="check-percent"  for="design-shop">
+                                    <span>
+                                        <img src="img/shape.svg" alt="">
+                                    </span>
+                                </label>
+                                <button data-btn="12" class="control-btn">
+                                    <p>Дизайн</p>
+                                    <span class="arrow-down"></span>
+                                </button>
+                            </div>
+                            <div class="control-description">
+                                <p>
+                                    Совокупность графических элементов:
+                                </p>
+                                <p>
+                                    Качество визуального исполнения привлекает,
+                                    в идеале представляет собой удобный и эргономичный интерфейс
+                                </p>
+                            </div>
+                        </li>
+                        <li class="control-item">
+                            <div class="control-button">
+                                <input data-btn="13" type="checkbox" id="main" checked>
+                                <label class="check-percent"  class="check-percent" for="main">
+                                    <span>
+                                        <img src="img/shape.svg" alt="">
+                                    </span>
+                                </label>
+                                <button data-btn="13" class="control-btn">
+                                    <p>Главная</p>
+                                    <span class="arrow-down"></span>
+                                </button>
+                            </div>
+                            <div class="control-description">
+                                <p>
+                                    Главная станица сайта
+                                </p>
+                                <p>
+                                    первая страница, которую пользователь видит, переходя на сайт
+                                </p>
+                            </div>
+                        </li>
+                        <li class="control-item">
+                            <div class="control-button">
+                                <input data-btn="14" type="checkbox" id="cart" checked>
+                                <label class="check-percent"  for="cart">
+                                    <span>
+                                        <img src="img/shape.svg" alt="">
+                                    </span>
+                                </label>
+                                <button data-btn="14" class="control-btn">
+                                    <p>Корзина</p>
+                                    <span class="arrow-down"></span>
+                                </button>
+                            </div>
+                            <div class="control-description">
+                                <p>
+                                    Интерфейс, куда пользователь может добавлять товары или услуги
+                                </p>
+                                <p>
+                                    Внутри пользователю видны товары, их количество, общая стоимость
+                                </p>
+                            </div>
+                        </li>
+                        <li class="control-item">
+                            <div class="control-button">
+                                <input data-btn="15" type="checkbox" id="card" checked>
+                                <label class="check-percent"  for="card">
+                                    <span>
+                                        <img src="img/shape.svg" alt="">
+                                    </span>
+                                </label>
+                                <button data-btn="15" class="control-btn">
+                                    <p>Карточка товаров </p>
+                                    <span class="arrow-down"></span>
+                                </button>
+                            </div>
+                            <div class="control-description">
+                                <p>
+                                    подробное описание товара
+                                </p>
+                                <p>
+                                    Это полноценное, информативное и привлекательное
+                                    объявление каждого из предложенных на сайте товаров или услуг.
+                                </p>
+                            </div>
+                        </li>
+                        <li class="control-item">
+                            <div class="control-button">
+                                <input data-btn="16" type="checkbox" id="catalog" checked>
+                                <label class="check-percent"  for="catalog">
+                                    <span>
+                                        <img src="img/shape.svg" alt="">
+                                    </span>
+                                </label>
+                                <button data-btn="16" class="control-btn">
+                                    <p>Каталог</p>
+                                    <span class="arrow-down"></span>
+                                </button>
+                            </div>
+                            <div class="control-description">
+                                <p>
+                                    Список предоставляемых товаров или услуг
+                                </p>
+                                <p>
+                                    Нужен для быстрого нахождения пользователем необходимого ему товара и услуги
+                                </p>
+                            </div>
+                        </li>
+                        <li class="control-item">
+                            <div class="control-button">
+                                <input data-btn="17" type="checkbox" id="profile" checked>
+                                <label class="check-percent"  for="profile">
+                                    <span>
+                                        <img src="img/shape.svg" alt="">
+                                    </span>
+                                </label>
+                                <button data-btn="17" class="control-btn">
+                                    <p>Профиль</p>
+                                    <span class="arrow-down"></span>
+                                </button>
+                            </div>
+                            <div class="control-description">
+                                <p>
+                                    Функционал, позволяющий администрировать свою учётную запись
+                                </p>
+                                <p>
+                                    может дать возможность ещё больше повысить лояльность постоянных клиентов,
+                                    предлагая им скидки на интересные им товары и услуги.
+                                </p>
+                            </div>
+                        </li>
+                        <li class="control-item">
+                            <div class="control-button">
+                                <input data-btn="18" type="checkbox" id="photo" checked>
+                                <label class="check-percent"  for="photo">
+                                    <span>
+                                        <img src="img/shape.svg" alt="">
+                                    </span>
+                                </label>
+                                <button data-btn="18" class="control-btn">
+                                    <p>Фото товара</p>
+                                    <span class="arrow-down"></span>
+                                </button>
+                            </div>
+                            <div class="control-description">
+                                <p>
+                                    повышают интерес клиента к предлагаемых ему товара
+                                </p>
+                                <p>
+                                    Уникальные и качественные фотографии всегда
+                                    качественно индексируются поисковыми системами
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <!--calc-shop end-->
+
+        <!--parley start-->
+        <section data-page="9" class="parley brief content">
+            <div class="title">
+                <h1 class="h1">Брифы</h1>
+            </div>
+            <div class="subtitle">Заполните форму и получите консультацию в подарок!</div>
+
+            <a target="_blank" href="https://docs.google.com/forms/d/15J7WRZUcFwU2Q5WufAHQyM_9xE9nSo5ZbFhxc3-fZEA/viewform?edit_requested=true" class="btn btn-opacity active-btn">Информация о компании</a>
+            <a target="_blank" href="https://docs.google.com/forms/d/1sZAQQzeo7NIuvsvh9Wp-VTYVKHF9z4DuSVjsySGa9NM/viewform?edit_requested=true" class="btn btn-opacity active-btn">Продвижение компании</a>
+            <a target="_blank" href="https://docs.google.com/forms/d/1YId7w9yjGwq399DIqVn73UJ0WbTA3TbrYpKox4JFbkI/viewform?edit_requested=true" class="btn btn-opacity active-btn">Интернет магазин</a>
+            <a target="_blank" href="https://docs.google.com/forms/d/1u_SXjv5CkhuegbVz3cKzUL8itqk0qIQjlDeIHYbZkkM/viewform?edit_requested=true" class="btn btn-opacity active-btn">Разработка дизайна</a>
+            <a target="_blank" href="https://docs.google.com/forms/d/1uTqZPnrzJZqSleNHXFOZ68jGWPzzNzNpqFLaNmjTP_c/viewform?edit_requested=true" class="btn btn-opacity active-btn">Контекстная реклама(Google)</a>
 
 
+            <!--/input-group-->
+
+
+        </section>
+        <!--parley end-->
 
     </main>
 <!--MAIN END-->
@@ -891,6 +1380,7 @@
 
 <!-- Scripts -->
 
+
 <!-- Pubsub -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pubsub-js/1.7.0/pubsub.min.js"></script>
 
@@ -901,10 +1391,11 @@
 <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/plugins/CSSPlugin.min.js"></script>-->
 <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/easing/EasePack.min.js"></script>-->
 <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenLite.min.js"></script>-->
+
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
-
+<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
 <script src="js/plugin.js"></script>
-
 
 </body>
 </html>
